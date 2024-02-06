@@ -5,7 +5,7 @@ import SomeComponent from './src/SomeComponent';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>This is me testing how to use Expo Go!</Text>
+      <Text></Text>
       <StatusBar style="auto" />
       <SomeComponent />
     </View>
