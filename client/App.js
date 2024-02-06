@@ -5,7 +5,7 @@ import SomeComponent from './src/SomeComponent';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>New commit</Text>
+      <Text>okokokokokko</Text>
       <StatusBar style="auto" />
       <SomeComponent />
     </View>
