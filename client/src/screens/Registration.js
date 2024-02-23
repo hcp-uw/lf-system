@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function Registration() {
+const Registration = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Text>testicles</Text>

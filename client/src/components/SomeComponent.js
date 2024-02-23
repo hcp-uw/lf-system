@@ -15,7 +15,7 @@ export default SomeComponent = () => {
 
 // You can style components and tags using StyleSheet
 const styles = StyleSheet.create({
-  text: {
+  container1: {
     color: 'red',
   },
 });
