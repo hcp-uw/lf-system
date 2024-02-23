@@ -1,8 +1,4 @@
 
-
-
-
-
 export const styles = StyleSheet.create({
     container1: {
         color: 'B7A57A', // gold
