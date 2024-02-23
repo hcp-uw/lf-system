@@ -11,18 +11,29 @@ export const styles = StyleSheet.create({
         borderRadius: 20,
     },
     container2: {
-        color: 'FFFFFF', // white
+        backgroundColor: 'FFFFFF', // white
         alignItems: 'center',
         height: 40,
-        padding: 30,
+        padding: 11,
         marginHorizontal: 68,
+        borderRadius: 20,
     },
     registerContainer: {
         color: '4B2E83', // purple
         alignItems: 'center',
         height: 40.78,
-        padding: 30,
+        padding: 1.91,
         marginHorizontal: 114,
+        borderRadius: 30,
+    },
+    loginContainer: {
+        color: '4B2E83', // purple
+        alignItems: 'center',
+        height: 39,
+        padding: 5,
+        marginHorizontal: 114,
+        borderRadius: 30,
     }
+
   });
     
