@@ -1,10 +1,14 @@
+import { StyleSheet } from "react-native";
+
 export const styles = StyleSheet.create({
     container1: {
-        color: 'B7A57A', // gold
+        backgroundColor: '#B7A57A', // gold
         alignItems: 'center',
-        height: 509,
+        height: 600,
         padding: 30, // not actual padding, placeholder
         marginHorizontal: 44,
+        marginVertical: 190,
+        borderRadius: 20,
     },
     container2: {
         color: 'FFFFFF', // white
