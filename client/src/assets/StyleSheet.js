@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
         borderRadius: 20,
     },
     container2: {
-        backgroundColor: 'FFFFFF', // white
+        color: 'FFFFFF', // white
         alignItems: 'center',
         height: 40,
         padding: 11,
