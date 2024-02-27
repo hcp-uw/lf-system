@@ -10,21 +10,29 @@ export const styles = StyleSheet.create({
         borderRadius: 30,
     },
     container2: {
-        backgroundColor: '#FFFFFF', // white
-        borderColor: '#000000',
-        borderWidth: 1,
+        backgroundColor: 'FFFFFF', // white
         alignItems: 'center',
         height: 40,
-        width: 200,
+        padding: 11,
         marginHorizontal: 68,
-        borderRadius: 50,
+        borderRadius: 20,
     },
     registerContainer: {
-        color: '#4B2E83', // purple
+        backgroundColor: '4B2E83', // purple
         alignItems: 'center',
         height: 40.78,
-        padding: 30,
+        padding: 1.91,
         marginHorizontal: 114,
+        borderRadius: 30,
+    },
+    loginContainer: {
+        backgroundColor: '4B2E83', // purple
+        alignItems: 'center',
+        height: 39,
+        padding: 5,
+        marginHorizontal: 114,
+        borderRadius: 30,
     }
+
   });
     
