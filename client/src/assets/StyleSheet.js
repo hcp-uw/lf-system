@@ -10,12 +10,14 @@ export const styles = StyleSheet.create({
         borderRadius: 30,
     },
     container2: {
-        backgroundColor: 'FFFFFF', // white
+        backgroundColor: '#FFFFFF', // white
+        borderColor: '#000000',
+        borderWidth: 1,
         alignItems: 'center',
         height: 40,
-        padding: 11,
+        width: 200,
         marginHorizontal: 68,
-        borderRadius: 20,
+        borderRadius: 50,
     },
     registerContainer: {
         backgroundColor: '4B2E83', // purple
@@ -33,6 +35,5 @@ export const styles = StyleSheet.create({
         marginHorizontal: 114,
         borderRadius: 30,
     }
-
-  });
+});
     
