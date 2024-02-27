@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         height: 509,
         padding: 30, // not actual padding, placeholder
+        gap:20,
         marginHorizontal: 45,
         borderRadius: 30,
     },
@@ -28,9 +29,10 @@ export const styles = StyleSheet.create({
         borderRadius: 30,
     },
     loginContainer: {
-        backgroundColor: '4B2E83', // purple
+        backgroundColor: '#4B2E83', // purple
         alignItems: 'center',
         height: 39,
+        width: 200,
         padding: 5,
         marginHorizontal: 114,
         borderRadius: 30,
