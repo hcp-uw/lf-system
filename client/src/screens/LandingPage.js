@@ -1,16 +1,51 @@
-import { Text, StyleSheet } from "react-native"; // Here we are using the React Library
+import React from 'react';
+import { Text, View, StyleSheet } from "react-native"; // Here we are using the React Library
 
 // By using export, you can import and use this component in your app!
-export default SomeComponent = () => {
-  let number = 100;
+export default LandingPage = () => {
 
+  const items = [
+    {title: 'AirPods Pro', location: 'Suzzallo Library', date: 'Jan 13, 2024 9:46PM', imageSrc: 'path_to_image'},
+  ];
   // This is what we want the component to return.
   return (
-    <Text style={styles.text}> {/* Here I am using the styles StyleSheet to change the text's color. */}
-      This is a component.
-      I can display data, {number}, using curly brackets!
-    </Text>
+    <View style={styles.container}>
+      <Text style={styles.header}>LF Systems</Text>
+      <SearchBar />
+      <ScrollView style={styles.itemsContainer}>
+        {items.map((item, index) => (
+          <ItemCard
+            key={index}
+            title={item.title}
+            location={item.location}
+            date={item.date}
+            imageSrc={item.imageSrc}
+          />
+        ))}
+      </ScrollView>
+    </View>
   )
+}
+
+const SearchBar = () => (
+  <View style = {styles.searchBar}>
+    <TextInput
+      style = {styles.searchInput}
+      placeholder="What are you looking for today?"
+      placeholderTextColor="#999"
+    />
+  </View>
+);
+
+const ItemCard = ({title, location, date, imageSrc}) => {
+  <View style={styles.itemCard}>
+    <Image source={{uri:imageSrc}} style={styles.itemImage} />
+    <View style={styles.itemInfo}>
+      <Text style={styles.itemTitle}>{title}</Text>
+      <Text style={styles.itemLocation}>{location}</Text>
+      <Text style={styles.itemDate}>{date}</Text>
+    </View>
+  </View>
 }
 
 // You can style components and tags using StyleSheet
@@ -19,5 +54,3 @@ const styles = StyleSheet.create({
     color: 'red',
   },
 });
-
-const TopBar
