@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet } from "react-native"; // Here we are using the React Library
+import { Text, TextInput, Image, View, StyleSheet, ScrollView } from "react-native"; // Here we are using the React Library
 
 // By using export, you can import and use this component in your app!
 export default LandingPage = () => {
@@ -12,7 +12,8 @@ export default LandingPage = () => {
     <View style={styles.container}>
       <Text style={styles.header}>LF Systems</Text>
       <SearchBar />
-      <ScrollView style={styles.itemsContainer}>
+      <ScrollView style={styles.scrollView}
+                  contentContainerStyle={styles.itemsContainer}>
         {items.map((item, index) => (
           <ItemCard
             key={index}

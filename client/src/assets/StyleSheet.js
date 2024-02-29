@@ -83,6 +83,15 @@ export const styles = StyleSheet.create({
                 backgroundColor: '#F2F2F2',
                 fontWeight: 'bold',
                 padding: 20,
-            }
+            },
+        scrollView: {
+            height: '20%',
+            width: '80%',
+            margin: 20,
+            alignSelf: 'center',
+            padding: 20,
+            borderWidth: 5,
+            borderRadius: 5,
+        }
 });
     
