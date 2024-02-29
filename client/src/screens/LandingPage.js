@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, TextInput, Image, View, StyleSheet, ScrollView } from "react-native"; // Here we are using the React Library
+import { styles } from '../assets/StyleSheet';
 
 // By using export, you can import and use this component in your app!
 export default LandingPage = () => {
@@ -10,7 +11,7 @@ export default LandingPage = () => {
   // This is what we want the component to return.
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>LF Systems</Text>
+      <Text style={styles.headerText}>LF Systems</Text>
       <SearchBar />
       <ScrollView style={styles.scrollView}
                   contentContainerStyle={styles.itemsContainer}>
@@ -40,7 +41,7 @@ const SearchBar = () => (
 
 const ItemCard = ({title, location, date, imageSrc}) => {
   <View style={styles.itemCard}>
-    <Image source={{uri:imageSrc}} style={styles.itemImage} />
+    <Image source={require('./airpods.png')} style={styles.itemImage} />
     <View style={styles.itemInfo}>
       <Text style={styles.itemTitle}>{title}</Text>
       <Text style={styles.itemLocation}>{location}</Text>
@@ -49,9 +50,9 @@ const ItemCard = ({title, location, date, imageSrc}) => {
   </View>
 }
 
-// You can style components and tags using StyleSheet
-const styles = StyleSheet.create({
-  text: {
-    color: 'red',
-  },
-});
+// // You can style components and tags using StyleSheet
+// const styles = StyleSheet.create({
+//   text: {
+//     color: 'red',
+//   },
+// });
