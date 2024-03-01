@@ -1,6 +1,7 @@
 import { Text, View } from 'react-native';
 import { styles } from '../assets/StyleSheet';
-import {PurpleButton, button} from '../components/button';
+import {PurpleButton} from '../components/button';
+import { InputContainer } from '../components/inputContainer';
 
 export default function Registration({navigation}){
   return (
@@ -14,15 +15,9 @@ export default function Registration({navigation}){
       }}>
 
       <View style={styles.container1}>
-
-        <View style={styles.container2}>
-        </View>
-        <View style={styles.container2}>
-        </View>
-        <View style={styles.container2}>
-        </View>
-        <View style={styles.container2}>
-        </View>
+        <InputContainer placeholderText = 'Name'/>
+        <InputContainer placeholderText = 'Email: sample@uw.edu'/>
+        <InputContainer placeholderText = 'Password'/>
         <PurpleButton navigation = {navigation} navigationPage = 'LandingPage'/>
       </View>
 
