@@ -107,6 +107,11 @@ export const styles = StyleSheet.create({
         padding: 20,
         borderWidth: 5,
         borderRadius: 5,
+    },
+    textWhite: {
+        alignSelf:'center',
+        color: 'white',
+        fontWeight: 'bold',
     }
 });
     

@@ -13,7 +13,9 @@ export const PurpleButton = ({navigation, navigationPage}) =>  {
   return (
     
     <TouchableOpacity style={styles.purpleContainer} onPress={onPress}>
-    <Text></Text>
+    <Text style ={styles.textWhite}>
+    Register
+    </Text>
     </TouchableOpacity>
     
     
