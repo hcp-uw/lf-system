@@ -31,7 +31,7 @@ export const styles = StyleSheet.create({
     purpleContainer: { // Register and Log in Button
         backgroundColor: '#4B2E83', // purple
         alignItems: 'center',
-        textAlignVertical: 'center',
+        justifyContent: 'center',
         height: 39,
         width: 155,
         padding: 5,
@@ -39,6 +39,28 @@ export const styles = StyleSheet.create({
         marginHorizontal: 114,
         borderRadius: 30,
     },
+
+    /* inputContainer */
+    inputBar: {
+        borderColor: '#E8E8E8',
+        fontWeight: 'bold',
+        height: '50',
+        width: '80%',
+        borderRadius: 10,
+        alignSelf:'center'
+    },
+    textInput: {
+        backgroundColor: '#FFFFFF',
+        borderColor: '#000000',
+        borderWidth: 1,
+        borderRadius: 50,
+        width: '80%',
+        padding: 10,
+        fontSize: 12,
+        alignSelf:'center',
+    },
+    /* inputContainer */
+
     /*landingpage*/
     container: {
         flex: 1,
