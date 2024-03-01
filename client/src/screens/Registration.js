@@ -6,9 +6,6 @@ import { InputContainer } from '../components/inputContainer';
 export default function Registration({navigation}){
   return (
     <View 
-      screenOptions={{
-        
-      }}
       style={{
       justifyContent: 'center', 
       flex : 1

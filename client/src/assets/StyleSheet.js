@@ -49,7 +49,8 @@ export const styles = StyleSheet.create({
         width: '80%',
         height: '8%',
         padding: 10,
-        fontSize: 12
+        fontSize: 12,
+        
     },
     /* inputContainer */
 
