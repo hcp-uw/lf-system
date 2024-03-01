@@ -15,6 +15,7 @@ export default function Registration({navigation}){
       }}>
 
       <View style={styles.container1}>
+
         <InputContainer placeholderText = 'Name'/>
         <InputContainer placeholderText = 'Email: sample@uw.edu'/>
         <InputContainer placeholderText = 'Password'/>
