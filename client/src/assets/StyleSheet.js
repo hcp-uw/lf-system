@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
     container1: {
         backgroundColor: '#B7A57A', // gold
         alignItems: 'center',
-        height: 509,
+        height: '68%',
         padding: 30, // not actual padding, placeholder
         gap:20,
         marginHorizontal: 45,
