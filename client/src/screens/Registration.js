@@ -4,7 +4,11 @@ import {PurpleButton, button} from '../components/button';
 
 export default function Registration({navigation}){
   return (
-    <View style={{
+    <View 
+      screenOptions={{
+        
+      }}
+      style={{
       justifyContent: 'center', 
       flex : 1
       }}>

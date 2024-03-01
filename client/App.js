@@ -9,7 +9,7 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName = "Registration" screenOptions={{
+      <Stack.Navigator initialRouteName = 'Registration' screenOptions={{
         headerStyle: {
           backgroundColor: '#39275B',
         },
@@ -27,3 +27,5 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
+
