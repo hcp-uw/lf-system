@@ -130,7 +130,7 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
 
-    textBlack: {
+    alreadyUserText: {
         alignSelf:'center',
         color: 'black',
         fontWeight: 'bold',
