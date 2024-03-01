@@ -31,6 +31,7 @@ export const styles = StyleSheet.create({
     purpleContainer: { // Register and Log in Button
         backgroundColor: '#4B2E83', // purple
         alignItems: 'center',
+        textAlignVertical: 'center',
         height: 39,
         width: 155,
         padding: 5,
