@@ -135,7 +135,7 @@ export const styles = StyleSheet.create({
         alignSelf:'center',
         color: 'black',
         fontWeight: 'bold',
-        fontSize: 26,
+        fontSize: 20,
     }
 });
     
