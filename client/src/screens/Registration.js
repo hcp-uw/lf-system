@@ -15,11 +15,16 @@ export default function Registration({navigation}){
       }}>
 
       <View style={styles.container1}>
-
+      
         <InputContainer placeholderText = 'Name'/>
+        <InputContainer placeholderText = 'Campus'/> 
         <InputContainer placeholderText = 'Email: sample@uw.edu'/>
         <InputContainer placeholderText = 'Password'/>
         <PurpleButton navigation = {navigation} navigationPage = 'LandingPage' buttonText='Register'/>
+        <Text style = {styles.alreadyUserText}>
+        Already a User?
+        </Text>
+        <PurpleButton navigation = {navigation} navigationPage = 'Login' buttonText='Login'/>
       </View>
 
     </View>
