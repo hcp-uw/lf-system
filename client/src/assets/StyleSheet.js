@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         height: '68%',
         padding: 30, // not actual padding, placeholder
-        gap:20,
+        gap:30,
         marginHorizontal: 45,
         borderRadius: 30,
     },
@@ -34,6 +34,7 @@ export const styles = StyleSheet.create({
         height: 39,
         width: 155,
         padding: 5,
+        justifyContent: 'center',
         marginHorizontal: 114,
         borderRadius: 30,
     },
@@ -112,6 +113,13 @@ export const styles = StyleSheet.create({
         alignSelf:'center',
         color: 'white',
         fontWeight: 'bold',
+    },
+
+    textBlack: {
+        alignSelf:'center',
+        color: 'black',
+        fontWeight: 'bold',
+        fontSize: 26,
     }
 });
     

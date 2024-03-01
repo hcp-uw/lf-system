@@ -23,7 +23,11 @@ export default function Registration({navigation}){
         </View>
         <View style={styles.container2}>
         </View>
-        <PurpleButton navigation = {navigation} navigationPage = 'LandingPage'/>
+        <PurpleButton navigation = {navigation} navigationPage = 'LandingPage' buttonText = 'Register'/>
+        <Text style = {styles.textBlack}> 
+        Already a User?
+        </Text>
+        <PurpleButton navigation = {navigation} navigationPage = 'Login' buttonText = 'Login'/>
       </View>
 
     </View>

@@ -2,7 +2,7 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import { styles } from '../assets/StyleSheet';
 // By using export, you can import and use this component in your app!
-export const PurpleButton = ({navigation, navigationPage}) =>  {
+export const PurpleButton = ({navigation, navigationPage, buttonText}) =>  {
   let number = 100;
 
 
@@ -14,7 +14,7 @@ export const PurpleButton = ({navigation, navigationPage}) =>  {
     
     <TouchableOpacity style={styles.purpleContainer} onPress={onPress}>
     <Text style ={styles.textWhite}>
-    Register
+    {buttonText}
     </Text>
     </TouchableOpacity>
     
