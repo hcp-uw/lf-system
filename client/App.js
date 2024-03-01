@@ -11,13 +11,14 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName = "Registration" screenOptions={{
         headerStyle: {
-          backgroundColor: '#39275B', // Set header background color
+          backgroundColor: '#39275B',
         },
-        headerTintColor: '#fff', // Set text color of header title and buttons
+        headerTintColor: '#fff',
         headerTitleStyle: {
-          fontWeight: 'bold', // Set font weight of header title
+          fontWeight: 'bold',
         },
-      }}> 
+      }}>
+         
         <Stack.Screen name='Registration' component={Registration} />
         <Stack.Screen name='LandingPage' component={LandingPage} />
         <Stack.Screen name='Login' component={Login} />
