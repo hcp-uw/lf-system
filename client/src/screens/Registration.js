@@ -24,7 +24,7 @@ export default function Registration({navigation}){
         <View style={styles.container2}>
         </View>
         <PurpleButton navigation = {navigation} navigationPage = 'LandingPage' buttonText = 'Register'/>
-        <Text style = {styles.textBlack}> 
+        <Text style = {styles.alreadyUserText}> 
         Already a User?
         </Text>
         <PurpleButton navigation = {navigation} navigationPage = 'Login' buttonText = 'Login'/>
