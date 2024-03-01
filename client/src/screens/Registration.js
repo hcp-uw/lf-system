@@ -19,7 +19,7 @@ export default function Registration({navigation}){
         <InputContainer placeholderText = 'Name'/>
         <InputContainer placeholderText = 'Email: sample@uw.edu'/>
         <InputContainer placeholderText = 'Password'/>
-        <PurpleButton navigation = {navigation} navigationPage = 'LandingPage'/>
+        <PurpleButton navigation = {navigation} navigationPage = 'LandingPage' buttonText='Register'/>
       </View>
 
     </View>

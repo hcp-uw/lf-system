@@ -41,23 +41,15 @@ export const styles = StyleSheet.create({
     },
 
     /* inputContainer */
-    inputBar: {
-        borderColor: '#E8E8E8',
-        fontWeight: 'bold',
-        height: '50',
-        width: '80%',
-        borderRadius: 10,
-        alignSelf:'center'
-    },
-    textInput: {
+    textInputBar: {
         backgroundColor: '#FFFFFF',
         borderColor: '#000000',
         borderWidth: 1,
         borderRadius: 50,
         width: '80%',
+        height: '8%',
         padding: 10,
-        fontSize: 12,
-        alignSelf:'center',
+        fontSize: 12
     },
     /* inputContainer */
 
