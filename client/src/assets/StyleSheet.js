@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         height: 509,
         padding: 30, // not actual padding, placeholder
+        gap:20,
         marginHorizontal: 45,
         borderRadius: 30,
     },
@@ -36,12 +37,84 @@ export const styles = StyleSheet.create({
         borderRadius: 30,
     },
     loginContainer: {
-        backgroundColor: '4B2E83', // purple
+        backgroundColor: '#4B2E83', // purple
         alignItems: 'center',
         height: 39,
+        width: 200,
         padding: 5,
         marginHorizontal: 114,
         borderRadius: 30,
+    },
+    /*landingpage*/
+    container: {
+        flex: 1,
+        backgroundColor: '#FFFFFF'
+    },
+    appHeader: {
+        paddingTop: 48,
+        paddingBottom: 16,
+        backgroundColor: '#F8F8F8',
+        //paddingVertical: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    headerText: {
+        fontSize: 24,
+        fontWeight: 'bold',
+    },
+    searchInput: {
+        backgroundColor: '#FFFFFF',
+        borderColor: '#000000',
+        borderWidth: 1,
+        borderRadius: 50,
+        width: '80%',
+        padding: 10,
+        fontSize: 16,
+        margin: 20,
+        height: 50,
+    },
+    itemsContainer: {
+        padding: 20,
+    },
+    itemCard: {
+        borderColor: '#F9F9F9',
+        borderWidth: 1,
+        borderRadius: 8,
+        padding: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: 10,
+        marginBottom: 16,
+        height: 150,
+        width: '47%',
+        overflow: 'hidden'
+    },
+    itemImage: {
+        width: '100%',
+        aspectRatio: 1, // Adjust as necessary to maintain aspect ratio
+        borderBottomWidth: 1,
+        borderColor: '#DDDDDD',
+    },
+    itemTitle: {
+        marginTop: 8,
+        height: 20,
+    },
+    searchBar: {
+        flexDirection: 'row',
+        borderColor: '#E8E8E8',
+        fontWeight: 'bold',
+        padding: 8,
+        borderRadius: 10,
+        margin: 16,
+    },
+    scrollView: {
+        height: '20%',
+        width: '80%',
+        margin: 20,
+        alignSelf: 'center',
+        padding: 20,
+        borderWidth: 5,
+        borderRadius: 5,
     }
 });
     
