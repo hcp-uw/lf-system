@@ -9,6 +9,7 @@ export const styles = StyleSheet.create({
         gap:30,
         marginHorizontal: 45,
         borderRadius: 30,
+        justifyContent: 'center'
     },
     container3: { //Modified container 1 to fit screen, can be used in place of container1 if needed.
         backgroundColor: '#B7A57A', // gold
@@ -39,7 +40,8 @@ export const styles = StyleSheet.create({
         width: '80%',
         height: '8%',
         padding: 10,
-        fontSize: 12
+        fontSize: 12,
+        
     },
     /* inputContainer */
 
