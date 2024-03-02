@@ -9,6 +9,7 @@ export const styles = StyleSheet.create({
         gap:30,
         marginHorizontal: 45,
         borderRadius: 30,
+        justifyContent: 'center'
     },
     container2: {
         backgroundColor: '#FFFFFF', // white
