@@ -3,13 +3,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import Registration from './src/screens/Registration';
 import LandingPage from './src/screens/LandingPage'
 import Login from './src/screens/Login';
+import Profile from './src/screens/Profile';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName = 'Registration' screenOptions={{
+      <Stack.Navigator initialRouteName = 'Profile' screenOptions={{
         headerStyle: {
           backgroundColor: '#39275B',
         },
@@ -22,6 +23,7 @@ export default function App() {
         <Stack.Screen name='Registration' component={Registration} />
         <Stack.Screen name='LandingPage' component={LandingPage} />
         <Stack.Screen name='Login' component={Login} />
+        <Stack.Screen name='Profile' component={Profile} />
 
       </Stack.Navigator>
     </NavigationContainer>

@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-    container1: {
+    goldBigContainer: {
         backgroundColor: '#B7A57A', // gold
         alignItems: 'center',
         height: '68%',
@@ -9,16 +9,6 @@ export const styles = StyleSheet.create({
         gap:30,
         marginHorizontal: 45,
         borderRadius: 30,
-    },
-    container2: {
-        backgroundColor: '#FFFFFF', // white
-        borderColor: '#000000',
-        borderWidth: 1,
-        alignItems: 'center',
-        height: 40,
-        width: 200,
-        marginHorizontal: 68,
-        borderRadius: 50,
     },
     container3: { //Modified container 1 to fit screen, can be used in place of container1 if needed.
         backgroundColor: '#B7A57A', // gold

@@ -14,7 +14,7 @@ export default function Registration({navigation}){
       flex : 1
       }}>
 
-      <View style={styles.container1}>
+      <View style={styles.goldBigContainer}>
       
         <InputContainer placeholderText = 'Name'/>
         <InputContainer placeholderText = 'Campus'/> 
