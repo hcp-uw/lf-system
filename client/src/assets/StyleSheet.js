@@ -11,14 +11,7 @@ export const styles = StyleSheet.create({
         borderRadius: 30,
         justifyContent: 'center'
     },
-    container3: { //Modified container 1 to fit screen, can be used in place of container1 if needed.
-        backgroundColor: '#B7A57A', // gold
-        alignItems: 'center',
-        height: 700,
-        padding: 30, // not actual padding, placeholder
-        marginHorizontal: 20,
-        borderRadius: 20,
-    },
+    
     purpleContainer: { // Register and Log in Button
         backgroundColor: '#4B2E83', // purple
         alignItems: 'center',
