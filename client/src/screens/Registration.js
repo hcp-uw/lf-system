@@ -22,7 +22,7 @@ export default function Registration({navigation}){
 
       <View style={styles.goldBigContainer}>
       
-        <InputContainer 
+        <InputContainer
         placeholderText = 'Name' 
         onChangeText={(val) => setName(val)}/>
 

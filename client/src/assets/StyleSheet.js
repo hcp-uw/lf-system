@@ -1,8 +1,12 @@
 import { StyleSheet } from "react-native";
 
+const purple = '#4B2E83';
+const gold = '#B7A57A';
+const white = '#FFFFFF';
+
 export const styles = StyleSheet.create({
     goldBigContainer: {
-        backgroundColor: '#B7A57A', // gold
+        backgroundColor: gold, // gold
         alignItems: 'center',
         height: '68%',
         padding: 30, // not actual padding, placeholder
@@ -10,6 +14,7 @@ export const styles = StyleSheet.create({
         marginHorizontal: 45,
         borderRadius: 30,
         justifyContent: 'center'
+        
     },
     container3: { //Modified container 1 to fit screen, can be used in place of container1 if needed.
         backgroundColor: '#B7A57A', // gold
@@ -20,7 +25,7 @@ export const styles = StyleSheet.create({
         borderRadius: 20,
     },
     purpleContainer: { // Register and Log in Button
-        backgroundColor: '#4B2E83', // purple
+        backgroundColor: purple, // purple
         alignItems: 'center',
         justifyContent: 'center',
         height: 39,
@@ -33,15 +38,15 @@ export const styles = StyleSheet.create({
 
     /* inputContainer */
     textInputBar: {
-        backgroundColor: '#FFFFFF',
+        backgroundColor: white,
         borderColor: '#000000',
-        borderWidth: 1,
         borderRadius: 50,
+        borderWidth: 1,
+        borderColor: purple,
         width: '80%',
         height: '8%',
         padding: 10,
         fontSize: 12,
-        
     },
     /* inputContainer */
 
