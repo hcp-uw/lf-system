@@ -43,7 +43,7 @@ export default function Registration({navigation}){
 
         <PurpleButton navigation = {navigation} navigationPage = 'Login' buttonText='Login'/>
       </View>
-      <NavBar/>
+      <NavBar navigation={navigation}/>
 
     </View>
   );

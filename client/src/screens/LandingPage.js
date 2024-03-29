@@ -1,9 +1,10 @@
 import React from 'react';
 import { Text, TextInput, Image, View, StyleSheet, ScrollView } from "react-native"; // Here we are using the React Library
 import { styles } from '../assets/StyleSheet';
+import { NavBar } from '../components/navBar';
 
 // By using export, you can import and use this component in your app!
-export default LandingPage = () => {
+export default LandingPage = ({navigation}) => {
 
   const items = [
     {title: 'AirPods Pro', location: 'Suzzallo Library', date: 'Jan 13, 2024 9:46PM', imageSrc: 'path_to_image'},
@@ -25,6 +26,7 @@ export default LandingPage = () => {
           />
         ))}
       </ScrollView>
+      <NavBar navigation={navigation}/>
     </View>
   )
 }

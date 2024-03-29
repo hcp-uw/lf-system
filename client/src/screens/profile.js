@@ -2,6 +2,7 @@ import {Text, View} from 'react-native'
 import { styles } from '../assets/StyleSheet';
 import {PurpleButton} from '../components/button';
 import { InputContainer } from '../components/inputContainer';
+import { NavBar } from '../components/navBar';
 
 export default function Profile({navigation}){
     return (
@@ -34,7 +35,7 @@ export default function Profile({navigation}){
         
 
         </View>
-  
+        <NavBar navigation={navigation}/>
       </View>
        );
        
