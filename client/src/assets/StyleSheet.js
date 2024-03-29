@@ -43,6 +43,12 @@ export const styles = StyleSheet.create({
     },
     /* inputContainer */
 
+    /* Navigation Bar*/
+    navBar: {
+        flexDirection: 'row',
+    },
+    /* Navigation Bar*/
+
     /*landingpage*/
     container: {
         flex: 1,

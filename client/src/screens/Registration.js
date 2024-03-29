@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { styles } from '../assets/StyleSheet';
 import { PurpleButton } from '../components/button';
 import { InputContainer } from '../components/inputContainer';
+import { NavBar } from '../components/navBar';
 
 export default function Registration({navigation}){
   const [email, setEmail] = useState('');
@@ -42,6 +43,7 @@ export default function Registration({navigation}){
 
         <PurpleButton navigation = {navigation} navigationPage = 'Login' buttonText='Login'/>
       </View>
+      <NavBar/>
 
     </View>
   );
