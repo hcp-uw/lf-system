@@ -131,6 +131,25 @@ export const styles = StyleSheet.create({
         color: 'black',
         fontWeight: 'bold',
         fontSize: 20,
+    },
+    postItemContainer: {
+        backgroundColor: '#FFFFFF',
+        borderColor: '#000000',
+        borderWidth: 1,
+        borderRadius: 50,
+        width: '80%',
+        padding: 10,
+        fontSize: 16,
+        margin: 20,
+        height: 50,
+    },
+    postText:{
+        alignSelf:'center',
+        color: 'black',
+        fontWeight: 'bold',
+        fontSize: 30,
     }
+
+    
 });
     

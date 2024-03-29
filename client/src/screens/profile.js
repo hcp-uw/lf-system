@@ -11,7 +11,8 @@ export default function Profile({navigation}){
         }}
         style={{
         justifyContent: 'center', 
-        flex : 1
+        flex : 1,
+        gap: 20,
         }}>
   
         <View style={[styles.goldBigContainer, { height: 131, } ]}>
@@ -22,7 +23,19 @@ export default function Profile({navigation}){
           
         
         </View>
+
+        <View style = {[styles.scrollView, {height: '40%', }]}>
+          <Text style = {styles.postText}>
+            Posts
+          </Text>
+          
+
+          
+        
+
+        </View>
   
       </View>
        );
+       
      }

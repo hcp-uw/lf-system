@@ -11,7 +11,7 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName = 'Registration' screenOptions={{
+      <Stack.Navigator initialRouteName = 'Profile' screenOptions={{
         headerStyle: {
           backgroundColor: '#39275B',
         },
