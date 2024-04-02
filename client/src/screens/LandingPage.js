@@ -3,7 +3,7 @@ import { Text, TextInput, Image, View, StyleSheet, ScrollView } from "react-nati
 import { styles } from '../assets/StyleSheet';
 
 // By using export, you can import and use this component in your app!
-export default LandingPage = () => {
+export default LandingPage = ({navigation}) => {
 
   const items = [
     {title: 'AirPods Pro', location: 'Suzzallo Library', date: 'Jan 13, 2024 9:46PM', imageSrc: 'path_to_image'},
