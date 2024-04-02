@@ -1,5 +1,5 @@
 import {Text, View, TextInput, Button} from 'react-native'
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 import { styles } from '../assets/StyleSheet';
 import { InputContainer } from '../components/inputContainer';
 import { PurpleButton } from '../components/button';
@@ -18,9 +18,9 @@ export default function Login({navigation}){
             
         <InputContainer placeholderText = 'Email: sample@uw.edu' onChangeText={(val) => setEmail(val)}/>
 
-        <InputContainer placeholderText = 'Password' onChageText={(val) => setPassword(val)}/>
+        <InputContainer placeholderText = 'Password' onChangeText={(val) => setPassword(val)}/>
 
-        <PurpleButton navigation = {navigation} navigationPage = 'LandingPage' buttonText='Login'/>
+        <PurpleButton navigation = {navigation} navigationPage = 'AuthStack' buttonText='Login'/>
 
         <Text style={styles.alreadyUserText}>Not a user?</Text>
 

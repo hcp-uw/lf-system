@@ -14,7 +14,6 @@ export const styles = StyleSheet.create({
         marginHorizontal: 45,
         borderRadius: 30,
         justifyContent: 'center'
-        
     },
     
     purpleContainer: { // Register and Log in Button
@@ -42,6 +41,24 @@ export const styles = StyleSheet.create({
         fontSize: 12,
     },
     /* inputContainer */
+
+    /* Navigation Bar*/
+    navBar: {
+        top: '20%',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        gap: 50,
+        padding:'1%'
+    },
+    navButton: {
+        width: 40,
+        height: 40,
+    },
+    navImgButton: {
+        width: '100%',
+        height: '100%',
+    },
+    /* Navigation Bar*/
 
     /*landingpage*/
     container: {
@@ -126,5 +143,42 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 20,
     },
+    postItemContainer: {
+        backgroundColor: '#FFFFFF',
+        borderColor: '#000000',
+        borderWidth: 1,
+        borderRadius: 50,
+        width: '80%',
+        padding: 10,
+        fontSize: 16,
+        margin: 20,
+        height: 50,
+    },
+    postText:{
+        alignSelf:'center',
+        color: 'black',
+        fontWeight: 'bold',
+        fontSize: 30,
+    },
+
+    avatarPlaceHolder:{
+        width: 100,
+        height: 100,
+        borderRadius: 50,
+        marginTop: 48,
+        backgroundColor: '#E1E2E6',
+        justifyContent: 'center',
+        alignItems: 'center',
+
+
+    },
+    avatar:{
+        position: 'absolute',
+        width: 100,
+        height: 100,
+        borderRadius: 50,
+        
+
+    },    
 });
     
