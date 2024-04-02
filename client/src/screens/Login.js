@@ -20,7 +20,7 @@ export default function Login({navigation}){
 
         <InputContainer placeholderText = 'Password' onChangeText={(val) => setPassword(val)}/>
 
-        <PurpleButton navigation = {navigation} navigationPage = 'LandingPage' buttonText='Login'/>
+        <PurpleButton navigation = {navigation} navigationPage = 'AuthStack' buttonText='Login'/>
 
         <Text style={styles.alreadyUserText}>Not a user?</Text>
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Text, TextInput, Image, View, StyleSheet, ScrollView } from "react-native"; // Here we are using the React Library
 import { styles } from '../assets/StyleSheet';
-import { NavBar } from '../components/navBar';
 
 // By using export, you can import and use this component in your app!
 export default LandingPage = ({navigation}) => {
@@ -26,7 +25,6 @@ export default LandingPage = ({navigation}) => {
           />
         ))}
       </ScrollView>
-      <NavBar navigation={navigation}/>
     </View>
   )
 }

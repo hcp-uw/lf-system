@@ -1,10 +1,10 @@
-import {Text, View} from 'react-native'
+import { Text, View, TouchableOpacity, Image } from 'react-native'
 import React from 'react';
 import { styles } from '../assets/StyleSheet';
 import {PostItemButton, PurpleButton} from '../components/button';
 import { InputContainer } from '../components/inputContainer';
-import UserPermission from '../utilities/UserPermssions'
-import * as ImagePicker from 'expo-image-picker'
+//import UserPermission from '../utilities/UserPermssions'
+//import * as ImagePicker from 'expo-image-picker'
 // import * as firebase from 'firebase';
 
 export default function Profile({navigation}){
@@ -17,19 +17,19 @@ export default function Profile({navigation}){
       },
 
     };
-    handlePickAvatar = aysnc () => {
-      UserPermission.getCameraPermission()
+    // handlePickAvatar = aysnc () => {
+    //   UserPermission.getCameraPermission();
 
-      let result = await ImagePicker.launchImageLibraryAysnc({
-        mediaTypes: ImagePicker.MediaTypeOptions.Images,
-        allowsEditing: true,
-        aspect: [4,3]
+    //   let result = await ImagePicker.launchImageLibraryAysnc({
+    //     mediaTypes: ImagePicker.MediaTypeOptions.Images,
+    //     allowsEditing: true,
+    //     aspect: [4,3]
 
-      })
-      if (result.cancelled){
-        this.setState({user: {... this.state.user, avatar: result.uri }});
-      }
-    };
+    //   });
+    //   if (result.cancelled){
+    //     this.setState({user: {... this.state.user, avatar: result.uri }});
+    //   };
+    // };
     return (
         <View 
         screenOptions={{
@@ -42,25 +42,20 @@ export default function Profile({navigation}){
         }}>
           
           
-            <TouchableOpacity style = {styles.avatarPlaceHolder} onPress={this.handlePickAvatar} >
+            <TouchableOpacity style = {styles.avatarPlaceHolder} /*onPress={this.handlePickAvatar}*/ >
               <Image source={{uri: this.state.user.avatar}} style = {styles.avatar}/>
             </TouchableOpacity>
          
         
           <View style={[styles.goldBigContainer, { height: 131, } ]}>
-        
             <InputContainer placeholderText = 'Name'/>
             <InputContainer placeholderText = 'Campus'/> 
-          
-          
-        
           </View>
 
           <View style = {[styles.scrollView, {height: '40%', }]}>
-            <Text style = {styles.postText}>
-            Posts
-           </Text>
-           <PostItemButton navigation = {navigation} navigationPage = 'Login' buttonText='Login'/> // make this go to the post implement later
+            <Text style = {styles.postText}>Posts</Text>
+            {/*make this go to the post implement later*/}
+            <PostItemButton navigation = {navigation} navigationPage = 'Login' buttonText='Login'/> 
         
           </View>
   
