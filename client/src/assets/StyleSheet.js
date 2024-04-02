@@ -125,6 +125,6 @@ export const styles = StyleSheet.create({
         color: 'black',
         fontWeight: 'bold',
         fontSize: 20,
-    }
+    },
 });
     
