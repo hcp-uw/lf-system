@@ -3,6 +3,7 @@ import React from 'react';
 import { styles } from '../assets/StyleSheet';
 import {PostItemButton, PurpleButton} from '../components/button';
 import { InputContainer } from '../components/inputContainer';
+import IonIcon from "react-native-vector-icons/Ionicons";
 //import UserPermission from '../utilities/UserPermssions'
 //import * as ImagePicker from 'expo-image-picker'
 // import * as firebase from 'firebase';
@@ -36,14 +37,16 @@ export default function Profile({navigation}){
           
         }}
         style={{
-        justifyContent: 'center', 
+        justifyContent: 'center',
+        alignContent: 'center', 
         flex : 1,
         gap: 20,
         }}>
           
           
             <TouchableOpacity style = {styles.avatarPlaceHolder} /*onPress={this.handlePickAvatar}*/ >
-              <Image source={{uri: this.state.user.avatar}} style = {styles.avatar}/>
+              {/* <Image source={{uri: this.state.user.avatar}} style = {styles.avatar}/> */}
+              <IonIcon name="person-circle-outline" size={100} />
             </TouchableOpacity>
          
         
