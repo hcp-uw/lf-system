@@ -25,7 +25,7 @@ export default function Registration({navigation}){
         onChangeText={(val) => setName(val)}/>
 
         <InputContainer 
-        placeholderText = 'Email: sample@uw.edu' 
+        placeholderText = 'UW NetID' 
         onChangeText={(val) => setEmail(val)}/>
 
         <InputContainer 
