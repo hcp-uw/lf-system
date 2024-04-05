@@ -16,7 +16,7 @@ export default function Login({navigation}){
     }}>
         <View style={styles.goldBigContainer}>
             
-        <InputContainer placeholderText = 'Email: sample@uw.edu' onChangeText={(val) => setEmail(val)}/>
+        <InputContainer placeholderText = 'UW NetID' onChangeText={(val) => setEmail(val)}/>
 
         <InputContainer placeholderText = 'Password' onChangeText={(val) => setPassword(val)}/>
 
