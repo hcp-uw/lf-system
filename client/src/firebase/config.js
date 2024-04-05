@@ -13,7 +13,7 @@ const firebaseConfig = {
   measurementId: "G-8CWBV6JGP9",
   databaseUrl: "https://lf-systems-default-rtdb.firebaseio.com/",
 };
-r
+
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getDatabase(app);
