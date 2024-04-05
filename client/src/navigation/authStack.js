@@ -15,18 +15,10 @@ import Profile from "../screens/profile";
 
 const Tab = createBottomTabNavigator();
 
-const NavButton = ({ imgSource }) => {
-  return (
-    <View>
-      <Image source={imgSource} style={{ width: 10, height: 10 }} />
-    </View>
-  );
-};
-
 export default function AuthStack() {
   return (
     <Tab.Navigator
-      initialRouteName="LandingPage"
+      initialRouteName="Explore"
       screenOptions={{
         headerShown: false,
       }}

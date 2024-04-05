@@ -4,14 +4,12 @@ import { styles } from '../assets/StyleSheet';
 import { PurpleButton } from '../components/button';
 import { InputContainer } from '../components/inputContainer';
 
+import register from '../auth/reg';
+
 export default function Registration({navigation}){
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
-
-  const register = ({email, password}) => {
-
-  }
 
   return (
     <View 
@@ -34,12 +32,12 @@ export default function Registration({navigation}){
         placeholderText = 'Password' 
         onChangeText={(val) => setPassword(val)}/>
 
-        <PurpleButton navigation = {navigation} navigationPage = 'LandingPage' buttonText='Register'/>
+        <PurpleButton navigation = {navigation} navigationPage = 'AuthStack' buttonText='Register'/>
 
         <Text style = {styles.alreadyUserText}>
         Already a User?
         </Text>
-
+        
         <PurpleButton navigation = {navigation} navigationPage = 'Login' buttonText='Login'/>
       </View>
 
