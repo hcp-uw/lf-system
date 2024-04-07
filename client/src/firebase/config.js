@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app"
-import { getAuth } from "firebase/auth";
+import { getAuth, initializeAuth } from "firebase/auth";
 import { getDatabase } from "firebase/database";
 
 
@@ -11,9 +11,9 @@ const firebaseConfig = {
   messagingSenderId: "806035283304",
   appId: "1:806035283304:web:8d15901da6498105020add",
   measurementId: "G-8CWBV6JGP9",
-  databaseUrl: "https://lf-systems-default-rtdb.firebaseio.com/",
+  databaseURL: "https://lf-systems-default-rtdb.firebaseio.com"
 };
-r
+    
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getDatabase(app);
