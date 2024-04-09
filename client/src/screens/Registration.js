@@ -44,7 +44,7 @@ export default function Registration({navigation}){
           onChangeText={(val) => setPassword(val)}
         />
 
-        <TouchableOpacity style={styles.purpleContainer} onPress={() => register({name: name, netId: email, campus: 'Seattle', password: password, navigation: navigation, screen: 'AuthStack'})}>
+        <TouchableOpacity style={styles.purpleContainer} onPress={() => register({name: name, netId: email, campus: 'Seattle', password: password, navigation: navigation})}>
             <Text style ={styles.textWhite}>
             Register
             </Text>
