@@ -2,11 +2,15 @@ import { Alert } from 'react-native';
 import { auth, db } from '../firebase/config';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 
-export const checkNetId = () => {
+const checkNetId = (netId) => {
+    if(netId.contains('@')){
+        const index = 
+    }
 
+    return true;
 }
 
-export const createProfile = (user, name, campus) => {
+const createProfile = (user, name, campus) => {
     
 }
 
@@ -24,7 +28,7 @@ export async function register( {name, campus, netId, password, navigation, scre
             }
 
             if (error.code === 'auth/invalid-email') {
-            console.log('That email address is invalid!');
+                console.log('That email address is invalid!');
             }
 
             console.error(error);
