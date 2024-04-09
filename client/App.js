@@ -2,7 +2,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import AuthStack from './src/navigation/authStack'
 import Registration from './src/screens/Registration';
-import LandingPage from './src/screens/LandingPage';
 import Login from './src/screens/Login';
 import Profile from './src/screens/profile';
 import CreateItem from './src/screens/CreateItem';

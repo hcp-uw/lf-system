@@ -1,35 +1,44 @@
-import { Alert } from 'react-native';
-import { auth, db } from '../firebase/config';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { Alert } from "react-native";
+import { auth, db } from "../firebase/config";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
-export const checkNetId = () => {
+const stripEmail = (netId) => {
+  if (netId.includes("@")) {
+    const index = netId.indexOf("@");
+    netId = netId.substring(0, index);
+  }
 
-}
+  return netId;
+};
 
-export const createProfile = (user, name, campus) => {
-    
-}
+const createProfile = (user, name, campus) => {};
 
-export async function register( {name, campus, netId, password, navigation, screen} ){
-    const email = netId +'@uw.edu';
-    
-    if(password !== '' && netId !== ''){
-        await createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
-            createProfile(userCredential.user, name, email);
-            console.log('User account created & signed in!');
-            navigation.navigate();
-        }).catch(error => {
-            if (error.code === 'auth/email-already-in-use') {
-                console.log('That email address is already in use!');
-            }
+export async function register({ name, campus, netId, password, navigation }) {
+  const email = stripEmail(netId) + "@uw.edu";
 
-            if (error.code === 'auth/invalid-email') {
-            console.log('That email address is invalid!');
-            }
+  if (password !== "" && netId !== "") {
+    await createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        createProfile(userCredential.user, name, email);
+        console.log("User account created & signed in!");
+        navigation.navigate("Login");
+      })
+      .catch((error) => {
+        if (error.code === "auth/email-already-in-use") {
+          Alert.alert("That email address is already in use!");
+        }
 
-            console.error(error);
-        });
-    } else{
-        Alert.alert('Missing email or password');
-    }
+        if (error.code === "auth/invalid-email") {
+          Alert.alert("That email address is invalid!");
+        }
+
+        if (error.code === "auth/weak-password") {
+          Alert.alert("Password should be at least 6 characters");
+        }
+
+        console.log(error);
+      });
+  } else {
+    Alert.alert("Missing email or password");
+  }
 }
