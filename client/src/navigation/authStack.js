@@ -65,5 +65,6 @@ export default function AuthStack() {
         }}
       />
     </Tab.Navigator>
+
   );
 }

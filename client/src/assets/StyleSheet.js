@@ -179,6 +179,16 @@ export const styles = StyleSheet.create({
         borderRadius: 50,
         
 
-    },    
+    },
+    
+    textInputBarCreateItem: {
+        backgroundColor: white,
+        borderColor: '#000000',
+        borderWidth: 1,
+        width: '85%',
+        height: '20%',
+        padding: 30,
+        fontSize: 12,
+    }
 });
     
