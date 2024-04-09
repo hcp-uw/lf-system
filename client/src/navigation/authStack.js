@@ -1,13 +1,13 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { View, Image } from "react-native";
-import { styles } from "../assets/StyleSheet";
+import { View, Text } from "react-native";
 
 // icons
 import FeatherIcon from "react-native-vector-icons/Feather";
 import MaterialCommunityIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import IonIcon from "react-native-vector-icons/Ionicons";
 
-// component imports
+// component/asset imports
+import { styles } from "../assets/StyleSheet";
 
 // screen imports
 import LandingPage from "../screens/LandingPage";
@@ -20,16 +20,47 @@ export default function AuthStack() {
     <Tab.Navigator
       initialRouteName="Explore"
       screenOptions={{
-        headerShown: false,
+        tabBarShowLabel: false,
+        tabBarActiveBackgroundColor: "#4B2E83",
+        tabBarStyle: {
+          paddingBottom: 0,
+        },
+        headerStyle: {
+          backgroundColor: '#39275B',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+        headerBackTitleVisible: false,
+        headerBackVisible: false
       }}
     >
       <Tab.Screen
         name="Explore"
         component={LandingPage}
         options={{
-          tabBarIcon: () => {
-            return <MaterialCommunityIcon name="compass-outline" size={30} />;
-          },
+          tabBarIcon: ({ focused }) => (
+            <View
+              style={{
+                alignItems: "center",
+                justifyContent: "center",
+                top: 0,
+                paddingBottom: 10,
+              }}
+            >
+              <MaterialCommunityIcon
+                name="compass-outline"
+                size={30}
+                color={focused ? "#FFFFFF" : "#4B2E83"}
+              />
+              <Text
+                style={{ color: focused ? "#FFFFFF" : "#4B2E83", fontSize: 12 }}
+              >
+                Explore
+              </Text>
+            </View>
+          ),
         }}
       />
 
@@ -37,21 +68,78 @@ export default function AuthStack() {
         name="Messages"
         component={Profile}
         options={{
-          tabBarIcon: () => {
-            return (
-              <MaterialCommunityIcon name="message-text-outline" size={30} />
-            );
-          },
+          tabBarIcon: ({ focused }) => (
+            <View
+              style={{
+                alignItems: "center",
+                justifyContent: "center",
+                top: 0,
+                paddingBottom: 10,
+              }}
+            >
+              <MaterialCommunityIcon
+                name="message-text-outline"
+                size={30}
+                color={focused ? "#FFFFFF" : "#4B2E83"}
+              />
+              <Text
+                style={{ color: focused ? "#FFFFFF" : "#4B2E83", fontSize: 12 }}
+              >
+                Messages
+              </Text>
+            </View>
+          ),
         }}
       />
 
       <Tab.Screen
-        name="Map"
+        name="CreatePost"
         component={Profile}
         options={{
-          tabBarIcon: () => {
-            return <FeatherIcon name="map" size={25} />;
-          },
+          tabBarIcon: ({ focused }) => (
+            <View
+              style={{
+                alignItems: "center",
+                justifyContent: "center",
+                top: 0,
+                paddingBottom: 10,
+              }}
+            >
+              <MaterialCommunityIcon
+                name="plus-box-outline"
+                size={40}
+                color={focused ? "#FFFFFF" : "#4B2E83"}
+              />
+            </View>
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="Items"
+        component={Profile}
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <View
+              style={{
+                alignItems: "center",
+                justifyContent: "center",
+                top: 0,
+                paddingBottom: 14,
+              }}
+            >
+              <MaterialCommunityIcon
+                name="hand-extended-outline"
+                size={35}
+                color={focused ? "#FFFFFF" : "#4B2E83"}
+              />
+              <Text
+                style={{ color: focused ? "#FFFFFF" : "#4B2E83", fontSize: 12 }}
+              >
+                Items
+              </Text>
+            </View>
+          ),
         }}
       />
 
@@ -59,9 +147,27 @@ export default function AuthStack() {
         name="Profile"
         component={Profile}
         options={{
-          tabBarIcon: () => {
-            return <IonIcon name="person-circle-outline" size={30} />;
-          },
+          tabBarIcon: ({ focused }) => (
+            <View
+              style={{
+                alignItems: "center",
+                justifyContent: "center",
+                top: 0,
+                paddingBottom: 6,
+              }}
+            >
+              <IonIcon
+                name="person"
+                size={27}
+                color={focused ? "#FFFFFF" : "#4B2E83"}
+              />
+              <Text
+                style={{ color: focused ? "#FFFFFF" : "#4B2E83", fontSize: 12 }}
+              >
+                Profile
+              </Text>
+            </View>
+          ),
         }}
       />
     </Tab.Navigator>

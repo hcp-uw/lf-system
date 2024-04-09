@@ -23,7 +23,7 @@ export default function App() {
       }}>
         <Stack.Screen name='Login' component={Login} options={{gestureEnabled: false}}/>
         <Stack.Screen name='Registration' component={Registration} options={{gestureEnabled: false}}/>
-        <Stack.Screen name='AuthStack' component={AuthStack} options={{gestureEnabled: false}}/>
+        <Stack.Screen name='AuthStack' component={AuthStack} options={{gestureEnabled: false, headerShown: false}}/>
         
       </Stack.Navigator>
     </NavigationContainer>

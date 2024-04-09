@@ -1,8 +1,8 @@
 import { StyleSheet } from "react-native";
 
-const purple = '#4B2E83';
-const gold = '#B7A57A';
-const white = '#FFFFFF';
+export const purple = '#4B2E83';
+export const gold = '#B7A57A';
+export const white = '#FFFFFF';
 
 export const styles = StyleSheet.create({
     goldBigContainer: {
