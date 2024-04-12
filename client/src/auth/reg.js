@@ -16,10 +16,11 @@ const createProfile = (user, name, campus) => {};
 export async function register({ name, campus, netId, password, navigation }) {
   const email = stripEmail(netId) + "@uw.edu";
 
-  if (password !== "" && netId !== "") {
+  if (password !== "" && netId !== "" && name !== "") {
     await createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        createProfile(userCredential.user, name, email);
+      .then((userCredentials) => {
+        const user = userCredentials.user;
+        createProfile(user, name, email);
         console.log("User account created & signed in!");
         navigation.navigate("Login");
       })
@@ -39,6 +40,6 @@ export async function register({ name, campus, netId, password, navigation }) {
         console.log(error);
       });
   } else {
-    Alert.alert("Missing email or password");
+    Alert.alert("Missing name, netid, or password");
   }
 }

@@ -41,6 +41,7 @@ export default function Registration({ navigation }) {
           placeholder="Password"
           placeholderTextColor="#999"
           onChangeText={(val) => setPassword(val)}
+          secureTextEntry
         />
 
         <TouchableOpacity
