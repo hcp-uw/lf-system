@@ -1,33 +1,37 @@
 import React from 'react';
-import { Text, TextInput, Image, View, StyleSheet, ScrollView } from "react-native"; // Here we are using the React Library
+import { useEffect, useState } from "react";
+import { Text, TextInput, Image, View, FlatList, StyleSheet, ScrollView } from "react-native"; // Here we are using the React Library
 import { styles } from '../assets/StyleSheet';
+import { firestore } from '../firebase/config';
 
 // By using export, you can import and use this component in your app!
 export default LandingPage = ({navigation}) => {
+  const [items, setItems] = useState([]);
 
-  const items = [
-    {title: 'AirPods Pro', location: 'Suzzallo Library', date: 'Jan 13, 2024 9:46PM', imageSrc: 'path_to_image'},
-  ];
-  // This is what we want the component to return.
+  useEffect(() => {
+    const subscriber = firestore()
+      .collection('items') // Replace 'items' with your collection name
+      .onSnapshot(querySnapshot => {
+        const items = querySnapshot.docs.map(documentSnapshot => {
+          return{
+            ...documentSnapshot.data(),
+            key: documentSnapshot.id,
+          }
+        });
+        setItems(items);
+      });
+
+    return () => subscriber(); // Detach listener on unmount
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.headerText}>LF Systems</Text>
-      <SearchBar />
-      <ScrollView style={styles.scrollView}
-                  contentContainerStyle={styles.itemsContainer}>
-        {items.map((item, index) => (
-          <ItemCard
-            key={index}
-            title={item.title}
-            location={item.location}
-            date={item.date}
-            imageSrc={item.imageSrc}
-          />
-        ))}
-      </ScrollView>
-    </View>
-  )
-}
+    <FlatList
+      data={items}
+      renderItem={({ item }) => <ItemCard item={item} />}
+      keyExtractor={item => item.key}
+    />
+  );
+};
 
 const SearchBar = () => (
   <View style = {styles.searchBar}>
@@ -39,13 +43,13 @@ const SearchBar = () => (
   </View>
 );
 
-const ItemCard = ({title, location, date, imageSrc}) => {
+const ItemCard = ({ item }) => {
   <View style={styles.itemCard}>
-    <Image source={require('./airpods.png')} style={styles.itemImage} />
+    <Image source={{uri: item.image}} style={styles.itemImage} />
     <View style={styles.itemInfo}>
-      <Text style={styles.itemTitle}>{title}</Text>
-      <Text style={styles.itemLocation}>{location}</Text>
-      <Text style={styles.itemDate}>{date}</Text>
+      <Text style={styles.itemTitle}>{item.name}</Text>
+      <Text style={styles.itemLocation}>{item.location}</Text>
+      <Text style={styles.itemDate}>{item.date}</Text>
     </View>
   </View>
 }
