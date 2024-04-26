@@ -28,5 +28,11 @@
 	<string>1:806035283304:ios:7f90d6e7efc9d73b020add</string>
 	<key>DATABASE_URL</key>
 	<string>https://lf-systems-default-rtdb.firebaseio.com</string>
+	<key>NSCameraUsageDescription<key>
+	<string> Please allow access to your camera so you can upload photos of lost or found items. 
+	This helps in accurately identifying and recovering items.</string>
+	<key>NSPhotoLibraryUsageDescription<key>
+	<string>This app needs access to your photo library to save photos you take.</string>
+
 </dict>
 </plist>
