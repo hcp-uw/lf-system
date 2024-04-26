@@ -46,9 +46,7 @@ export async function register({ name, campus, netId, password, navigation }) {
   }
 }
 
-export async function login({ netId, password, navigation }) {
-  
-
+export async function login({ netId, password }) {
   if (netId !== "" && password !== "") {
     const email = stripEmail(netId) + "@uw.edu";
     await signInWithEmailAndPassword(auth, email, password)
