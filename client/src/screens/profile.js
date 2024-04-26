@@ -40,7 +40,7 @@ export default function Profile({ navigation }) {
         )}
       </TouchableOpacity>
 
-      {/* You can continue adding more UI elements here as per your original component */}
+      {}
     </View>
   );
 }

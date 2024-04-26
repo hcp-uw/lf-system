@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import AuthStack from './src/navigation/authStack'
 import Registration from './src/screens/RegistrationScreen';
 import Login from './src/screens/LoginScreen';
-import Profile from './src/screens/profile';
+import Profile from './src/screens/Profile';
 import CreateItem from './src/screens/CreateItem';
 import CameraComponent from './src/screens/CameraComponent';
 

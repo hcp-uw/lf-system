@@ -11,7 +11,7 @@ import { styles } from "../assets/StyleSheet";
 
 // screen imports
 import LandingPage from "../screens/LandingPage";
-import Profile from "../screens/profile";
+import Profile from "../screens/Profile";
 
 const Tab = createBottomTabNavigator();
 

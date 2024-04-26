@@ -1,9 +1,11 @@
 import React, { useRef } from 'react';
 import { View, Button, Platform, Alert } from 'react-native';
-import { RNCamera } from 'react-native-camera';
+import { Camera, useCameraDevices } from '@mrousavy/react-native-vision-camera';
 import storage from '@react-native-firebase/storage';
 
 const CameraComponent = ({ route, navigation }) => {
+  const devices = useCameraDevices();
+  const device = devices.back; // Use the back camera
   const cameraRef = useRef(null);
 
   const uploadImage = async (filePath) => {
@@ -22,24 +24,31 @@ const CameraComponent = ({ route, navigation }) => {
   };
 
   const takePicture = async () => {
-    if (cameraRef.current) {
-      const options = { quality: 0.5, base64: true };
-      const data = await cameraRef.current.takePictureAsync(options);
-      const uploadUrl = await uploadImage(data.uri);
+    if (cameraRef.current && device) {
+      const photo = await cameraRef.current.takePhoto();
+      const uploadUrl = await uploadImage(photo.path);
       if (uploadUrl && route.params?.setAvatarUrl) {
         route.params.setAvatarUrl(uploadUrl);
         navigation.goBack();
       }
+    } else {
+      Alert.alert("Camera not ready", "Wait until the camera is ready before snapping a photo.");
     }
   };
 
+  if (device == null) {
+    return <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Loading...</Text>
+    </View>;
+  }
+
   return (
     <View style={{ flex: 1 }}>
-      <RNCamera
+      <Camera
         ref={cameraRef}
         style={{ flex: 1 }}
-        type={RNCamera.Constants.Type.back}
-        flashMode={RNCamera.Constants.FlashMode.on}
+        device={device}
+        isActive={true}
       />
       <Button title="Capture" onPress={takePicture} />
     </View>
