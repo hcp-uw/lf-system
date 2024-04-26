@@ -9,7 +9,7 @@ import { auth } from "../firebase/config";
 export default function Login({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const testing = false;
+  const testing = true;
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
