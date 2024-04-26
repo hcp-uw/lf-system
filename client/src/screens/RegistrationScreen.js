@@ -10,7 +10,7 @@ import { auth } from "../firebase/config";
 import { register } from "../auth/userAuth";
 
 export default function Registration({ navigation }) {
-  const [email, setEmail] = useState("");
+  const [netId, setNetId] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
 
@@ -45,7 +45,7 @@ export default function Registration({ navigation }) {
           style={styles.textInputBar}
           placeholder="UW NetID"
           placeholderTextColor="#999"
-          onChangeText={(val) => setEmail(val)}
+          onChangeText={(val) => setNetId(val)}
         />
 
         <TextInput
@@ -62,7 +62,7 @@ export default function Registration({ navigation }) {
           onPress={() =>
             register({
               name: name,
-              netId: email,
+              netId: netId,
               campus: "Seattle",
               password: password,
               navigation: navigation,

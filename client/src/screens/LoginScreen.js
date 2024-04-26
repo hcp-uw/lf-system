@@ -7,9 +7,9 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase/config";
 
 export default function Login({ navigation }) {
-  const [email, setEmail] = useState("");
+  const [netId, setNetId] = useState("");
   const [password, setPassword] = useState("");
-  const testing = true;
+  const testing = true; // set to true for easy login access
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -34,7 +34,7 @@ export default function Login({ navigation }) {
           style={styles.textInputBar}
           placeholderTextColor="#999"
           placeholder="UW NetID"
-          onChangeText={(val) => setEmail(val)}
+          onChangeText={(val) => setNetId(val)}
         />
 
         <TextInput
@@ -48,10 +48,11 @@ export default function Login({ navigation }) {
         <TouchableOpacity
           style={styles.purpleContainer}
           onPress={() => 
+            // logs in automatically if testing is true otherwise requires you to enter netId/password.
             testing
-              ? login({ netId: 'fpazaran', password: 'password' })
+              ? login({ netId: 'fpazaran', password: 'password' }) 
               : login({
-                  netId: email,
+                  netId: netId,
                   password: password,
                 })
           }
