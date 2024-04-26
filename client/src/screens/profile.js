@@ -8,7 +8,7 @@ import { useNavigation } from '@react-navigation/native';
 
 
 
-export default function Profile({ navigation }) {
+export default function Profile() {
   const navigation = useNavigation();
   const [user, setUser] = useState({
     name: "",

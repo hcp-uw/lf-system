@@ -1,27 +1,27 @@
 import React, { useRef } from 'react';
 import { View, Button, Platform, Alert } from 'react-native';
 import { RNCamera } from 'react-native-camera';
-import storage from '@react-native-firebase/storage';
+// import {} from '@react-native-firebase/storage';
 
 const CameraComponent = ({ route, navigation }) => {
   const cameraRef = useRef(null);
 
-  const uploadImage = async (filePath) => {
-    const filename = filePath.substring(filePath.lastIndexOf('/') + 1);
-    const uploadUri = Platform.OS === 'ios' ? filePath.replace('file://', '') : filePath;
-    const task = storage().ref(filename).putFile(uploadUri);
+  // const uploadImage = async (filePath) => {
+  //   const filename = filePath.substring(filePath.lastIndexOf('/') + 1);
+  //   const uploadUri = Platform.OS === 'ios' ? filePath.replace('file://', '') : filePath;
+  //   const task = storage().ref(filename).putFile(uploadUri);
 
-    try {
-      await task;
-      const url = await storage().ref(filename).getDownloadURL();
-      return url; // Returns the URL of the image in Firebase Storage.
-    } catch (e) {
-      console.error('Upload failed:', e);
-      return null;
-    }
-  };
+  //   try {
+  //     await task;
+  //     const url = await storage().ref(filename).getDownloadURL();
+  //     return url; // Returns the URL of the image in Firebase Storage.
+  //   } catch (e) {
+  //     console.error('Upload failed:', e);
+  //     return null;
+  //   }
+  // };
 
-  const takePicture = async () => {
+  async function takePicture () {
     if (cameraRef.current) {
       const options = { quality: 0.5, base64: true };
       const data = await cameraRef.current.takePictureAsync(options);
