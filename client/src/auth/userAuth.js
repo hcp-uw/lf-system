@@ -1,6 +1,6 @@
 import { Alert } from "react-native";
-import { auth, db } from "../firebase/config";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase/config";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 const stripEmail = (netId) => {
   if (netId.includes("@")) {
@@ -14,9 +14,11 @@ const stripEmail = (netId) => {
 const createProfile = (user, name, campus) => {};
 
 export async function register({ name, campus, netId, password, navigation }) {
-  const email = stripEmail(netId) + "@uw.edu";
+
 
   if (password !== "" && netId !== "" && name !== "") {
+    const email = stripEmail(netId) + "@uw.edu";
+
     await createUserWithEmailAndPassword(auth, email, password)
       .then((userCredentials) => {
         const user = userCredentials.user;
@@ -40,6 +42,22 @@ export async function register({ name, campus, netId, password, navigation }) {
         console.log(error);
       });
   } else {
-    Alert.alert("Missing name, netid, or password");
+    Alert.alert("Missing name, netID, or password");
+  }
+}
+
+export async function login({ netId, password, navigation }) {
+  
+
+  if (netId !== "" && password !== "") {
+    const email = stripEmail(netId) + "@uw.edu";
+    await signInWithEmailAndPassword(auth, email, password)
+      .then((userCredentials) => {
+        const user = userCredentials.user;
+        console.log(user.email);
+      })
+      .catch((error) => Alert.alert(error.message));
+  } else {
+    Alert.alert("Missing netID or password");
   }
 }

@@ -1,15 +1,28 @@
 import { Text, View, TouchableOpacity, TextInput } from "react-native";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { styles } from "../assets/StyleSheet";
 import { PurpleButton } from "../components/button";
 import { InputContainer } from "../components/inputContainer";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../firebase/config";
 
-import { register } from "../auth/reg";
+
+import { register } from "../auth/userAuth";
 
 export default function Registration({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, user =>{
+      if(user) {
+        navigation.navigate("AuthStack");
+      }
+    })
+
+    return unsubscribe;
+  }, [])
 
   return (
     <View

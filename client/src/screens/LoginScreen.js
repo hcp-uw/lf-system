@@ -2,23 +2,24 @@ import { Text, View, TouchableOpacity, TextInput } from "react-native";
 import { useEffect, useState } from "react";
 import { styles } from "../assets/StyleSheet";
 import { PurpleButton } from "../components/button";
-import { login } from "../auth/login";
+import { login } from "../auth/userAuth";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase/config";
 
 export default function Login({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const testing = false;
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, user =>{
-      if(user) {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
         navigation.navigate("AuthStack");
       }
-    })
+    });
 
     return unsubscribe;
-  }, [])
+  }, []);
 
   return (
     <View
@@ -47,7 +48,13 @@ export default function Login({ navigation }) {
         <TouchableOpacity
           style={styles.purpleContainer}
           onPress={() =>
-            login({ navigation: navigation, email: email, password: password })
+            testing
+              ? login({ navigation: navigation, email: 'fpazaran', password: 'password' })
+              : login({
+                  navigation: navigation,
+                  email: email,
+                  password: password,
+                })
           }
         >
           <Text style={styles.textWhite}>Login</Text>
