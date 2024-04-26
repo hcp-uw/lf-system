@@ -47,12 +47,11 @@ export default function Login({ navigation }) {
 
         <TouchableOpacity
           style={styles.purpleContainer}
-          onPress={() =>
+          onPress={() => 
             testing
-              ? login({ navigation: navigation, email: 'fpazaran', password: 'password' })
+              ? login({ netId: 'fpazaran', password: 'password' })
               : login({
-                  navigation: navigation,
-                  email: email,
+                  netId: email,
                   password: password,
                 })
           }
