@@ -1,8 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from "react";
-import { Text, TextInput, Image, View, FlatList, StyleSheet, ScrollView } from "react-native"; // Here we are using the React Library
+import { Text, TextInput, Image, View, FlatList, StyleSheet, ScrollView } from "react-native"; 
 import { styles } from '../assets/StyleSheet';
-import { firestore } from '../firebase/config';
 
 // By using export, you can import and use this component in your app!
 export default LandingPage = ({navigation}) => {
