@@ -3,7 +3,7 @@ import { View, Button, Platform, Alert } from 'react-native';
 import { Camera, useCameraDevices } from '@mrousavy/react-native-vision-camera';
 import storage from '@react-native-firebase/storage';
 
-const CameraComponent = ({ route, navigation }) => {
+const CameraComponent = ({ navigation }) => {
   const devices = useCameraDevices();
   const device = devices.back; // Use the back camera
   const cameraRef = useRef(null);
