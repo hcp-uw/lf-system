@@ -13,6 +13,7 @@ import { styles } from "../assets/StyleSheet";
 import LandingPage from "../screens/LandingPage";
 import Profile from "../screens/Profile";
 
+
 const Tab = createBottomTabNavigator();
 
 export default function AuthStack() {

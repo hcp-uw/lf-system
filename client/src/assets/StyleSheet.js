@@ -63,7 +63,8 @@ export const styles = StyleSheet.create({
     /*landingpage*/
     container: {
         flex: 1,
-        backgroundColor: '#FFFFFF'
+        backgroundColor: '#FFFFFF',
+        
     },
     appHeader: {
         paddingTop: 48,
@@ -89,10 +90,16 @@ export const styles = StyleSheet.create({
         height: 50,
     },
     itemsContainer: {
+        margin: 20,
         padding: 20,
+        borderColor: 'black',
+        width: 310,
+        borderWidth: 1,
+        
+
     },
     itemCard: {
-        borderColor: '#F9F9F9',
+        borderColor: 'black',
         borderWidth: 1,
         borderRadius: 8,
         padding: 10,
@@ -146,13 +153,15 @@ export const styles = StyleSheet.create({
     postItemContainer: {
         backgroundColor: '#FFFFFF',
         borderColor: '#000000',
-        borderWidth: 1,
+        borderWidth: 2,
         borderRadius: 50,
         width: '80%',
         padding: 10,
         fontSize: 16,
         margin: 20,
-        height: 50,
+        height: '100%',
+        
+        
     },
     postText:{
         alignSelf:'center',
