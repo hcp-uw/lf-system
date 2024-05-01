@@ -1,12 +1,12 @@
-import React, { useRef } from 'react';
-import { View, Button, Platform, Alert } from 'react-native';
-import { Camera, useCameraDevices } from '@mrousavy/react-native-vision-camera';
-import storage from '@react-native-firebase/storage';
+// import React, { useRef } from 'react';
+// import { View, Button, Platform, Alert } from 'react-native';
+// import { Camera, useCameraDevices } from 'react-native-vision-camera';
+// import storage from '@react-native-firebase/storage';
 
 const CameraComponent = ({ route, navigation }) => {
-  const devices = useCameraDevices();
-  const device = devices.back; // Use the back camera
-  const cameraRef = useRef(null);
+  // const devices = useCameraDevices();
+  // const device = devices.back; // Use the back camera
+  // const cameraRef = useRef(null);
 
   // const uploadImage = async (filePath) => {
   //   const filename = filePath.substring(filePath.lastIndexOf('/') + 1);
@@ -23,34 +23,34 @@ const CameraComponent = ({ route, navigation }) => {
   //   }
   // };
 
-  const takePicture = async () => {
-    if (cameraRef.current && device) {
-      const photo = await cameraRef.current.takePhoto();
-      const uploadUrl = await uploadImage(photo.path);
-      if (uploadUrl && route.params?.setAvatarUrl) {
-        route.params.setAvatarUrl(uploadUrl);
-        navigation.goBack();
-      }
-    } else {
-      Alert.alert("Camera not ready", "Wait until the camera is ready before snapping a photo.");
-    }
-  };
+  // const takePicture = async () => {
+  //   if (cameraRef.current && device) {
+  //     const photo = await cameraRef.current.takePhoto();
+  //     const uploadUrl = await uploadImage(photo.path);
+  //     if (uploadUrl && route.params?.setAvatarUrl) {
+  //       route.params.setAvatarUrl(uploadUrl);
+  //       navigation.goBack();
+  //     }
+  //   } else {
+  //     Alert.alert("Camera not ready", "Wait until the camera is ready before snapping a photo.");
+  //   }
+  // };
 
-  if (device == null) {
-    return <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Loading...</Text>
-    </View>;
-  }
+  // if (device == null) {
+  //   return <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+  //     <Text>Loading...</Text>
+  //   </View>;
+  // }
 
   return (
     <View style={{ flex: 1 }}>
-      <Camera
+      {/* <Camera
         ref={cameraRef}
         style={{ flex: 1 }}
         device={device}
         isActive={true}
       />
-      <Button title="Capture" onPress={takePicture} />
+      <Button title="Capture" onPress={takePicture} /> */}
     </View>
   );
 };

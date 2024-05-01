@@ -2,24 +2,28 @@ import React from 'react';
 import { useEffect, useState } from "react";
 import { Text, TextInput, Image, View, FlatList, StyleSheet, ScrollView } from "react-native"; // Here we are using the React Library
 import { styles } from '../assets/StyleSheet';
+import { collection, getDocs } from '@firebase/firestore';
 import { firestore } from '../firebase/config';
 
 // By using export, you can import and use this component in your app!
 export default LandingPage = ({navigation}) => {
   const [items, setItems] = useState([]);
 
+  const getData = async () => {
+    const itemDocs = await getDocs(collection(firestore, 'items'));
+    const items = itemDocs.docs.map(doc => {
+      return{
+        ...doc.data(),
+        key: doc.id,
+      }
+    })
+    setItems(items);
+
+  } 
+
   useEffect(() => {
-    const subscriber = firestore()
-      .collection('items') // Replace 'items' with your collection name
-      .onSnapshot(querySnapshot => {
-        const items = querySnapshot.docs.map(documentSnapshot => {
-          return{
-            ...documentSnapshot.data(),
-            key: documentSnapshot.id,
-          }
-        });
-        setItems(items);
-      });
+    getData; // Replace 'items' with your collection name
+  
 
     return () => subscriber(); // Detach listener on unmount
   }, []);
