@@ -1,58 +1,47 @@
-// import React, { useRef } from 'react';
-// import { View, Button, Platform, Alert } from 'react-native';
-// import { Camera, useCameraDevices } from 'react-native-vision-camera';
-// import storage from '@react-native-firebase/storage';
+import React, { useState, useEffect, useRef } from 'react';
+import { View, Button, Text, StyleSheet } from 'react-native'; 
+import { Camera } from 'expo-camera';
+import { storage } from '../firebase/config'; 
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
-const CameraComponent = ({ route, navigation }) => {
-  // const devices = useCameraDevices();
-  // const device = devices.back; // Use the back camera
-  // const cameraRef = useRef(null);
 
-  // const uploadImage = async (filePath) => {
-  //   const filename = filePath.substring(filePath.lastIndexOf('/') + 1);
-  //   const uploadUri = Platform.OS === 'ios' ? filePath.replace('file://', '') : filePath;
-  //   const task = storage().ref(filename).putFile(uploadUri);
+export default function CameraComponent({ route }) {
+  const [hasPermission, setHasPermission] = useState(null);
+  const cameraRef = useRef(null);
 
-  //   try {
-  //     await task;
-  //     const url = await storage().ref(filename).getDownloadURL();
-  //     return url; // Returns the URL of the image in Firebase Storage.
-  //   } catch (e) {
-  //     console.error('Upload failed:', e);
-  //     return null;
-  //   }
-  // };
+  useEffect(() => {
+    (async () => {
+      const { status } = await Camera.requestCameraPermissionsAsync();
+      setHasPermission(status === 'granted');
+    })();
+  }, []);
 
-  // const takePicture = async () => {
-  //   if (cameraRef.current && device) {
-  //     const photo = await cameraRef.current.takePhoto();
-  //     const uploadUrl = await uploadImage(photo.path);
-  //     if (uploadUrl && route.params?.setAvatarUrl) {
-  //       route.params.setAvatarUrl(uploadUrl);
-  //       navigation.goBack();
-  //     }
-  //   } else {
-  //     Alert.alert("Camera not ready", "Wait until the camera is ready before snapping a photo.");
-  //   }
-  // };
+  const takePicture = async () => {
+    if (cameraRef.current) {
+      let photo = await cameraRef.current.takePictureAsync();
+      const response = await fetch(photo.uri);
+      const blob = await response.blob();
+      const fileName = `${new Date().getTime()}-photo.jpg`;
+      const storageRef = ref(storage, fileName); // Create a reference to the file location
+      const snapshot = await uploadBytes(storageRef, blob); // Upload the file
+      const url = await getDownloadURL(snapshot.ref); // Get the file URL
+      route.params.setAvatarUrl(url); // Pass the URL back via the route parameters
+    }
+  };
 
-  // if (device == null) {
-  //   return <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-  //     <Text>Loading...</Text>
-  //   </View>;
-  // }
-
+  if (hasPermission === null) {
+    return <View />;
+  }
+  if (hasPermission === false) {
+    return <Text>No access to camera</Text>; // Ensure Text is properly imported and used
+  }
   return (
     <View style={{ flex: 1 }}>
-      {/* <Camera
-        ref={cameraRef}
-        style={{ flex: 1 }}
-        device={device}
-        isActive={true}
-      />
-      <Button title="Capture" onPress={takePicture} /> */}
+      <Camera style={{ flex: 1 }} ref={cameraRef}>
+        <View style={{ flex: 1, backgroundColor: 'transparent', flexDirection: 'row', justifyContent: 'center', margin: 20 }}>
+          <Button title="Take Picture" onPress={takePicture} />
+        </View>
+      </Camera>
     </View>
   );
-};
-
-export default CameraComponent;
+}
