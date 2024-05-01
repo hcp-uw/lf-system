@@ -100,7 +100,7 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         margin: 10,
         marginBottom: 16,
-        height: 150,
+        height: 250,
         width: '47%',
         overflow: 'hidden'
     },
