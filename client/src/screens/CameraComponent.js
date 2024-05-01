@@ -30,7 +30,7 @@ export default function CameraComponent({ route }) {
         const snapshot = await uploadBytes(storageRef, blob);
         const url = await getDownloadURL(snapshot.ref);
 
-        const userId = ; // Replace with dynamic user ID as needed
+        const userId = 'placeholder'; 
         const userRef = firestore.collection('users').doc(userId);
         await userRef.update({ avatar: url });
 
