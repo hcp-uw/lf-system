@@ -7,6 +7,7 @@ import Profile from './src/screens/Profile';
 import CreateItem from './src/screens/CreateItem';
 import CameraComponent from './src/screens/CameraComponent';
 
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {

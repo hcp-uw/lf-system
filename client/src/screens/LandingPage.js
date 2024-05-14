@@ -1,34 +1,34 @@
 import React from 'react';
 import { useEffect, useState } from "react";
-import { Text, TextInput, Image, View, FlatList, StyleSheet, ScrollView } from "react-native"; // Here we are using the React Library
+import { Text, TextInput, Image, View, FlatList, StyleSheet, ScrollView } from "react-native"; 
 import { styles } from '../assets/StyleSheet';
+import { collection, getDocs } from '@firebase/firestore';
 import { firestore } from '../firebase/config';
 
 // By using export, you can import and use this component in your app!
 export default LandingPage = ({navigation}) => {
   const [items, setItems] = useState([]);
 
-  useEffect(() => {
-    const subscriber = firestore()
-      .collection('items') // Replace 'items' with your collection name
-      .onSnapshot(querySnapshot => {
-        const items = querySnapshot.docs.map(documentSnapshot => {
-          return{
-            ...documentSnapshot.data(),
-            key: documentSnapshot.id,
-          }
-        });
-        setItems(items);
-      });
+  const getData = async () => {
+    const itemsCol = collection(firestore, "item");
+    const itemsSnapshot = await getDocs(itemsCol);
+    const itemsList = itemsSnapshot.docs.map(doc => doc.data());
+    return itemsList
+  }
 
-    return () => subscriber(); // Detach listener on unmount
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getData();
+      console.log(data);
+      setItems(data);
+    };
+    fetchData();
   }, []);
 
   return (
     <FlatList
       data={items}
-      renderItem={({ item }) => <ItemCard item={item} />}
-      keyExtractor={item => item.key}
+      renderItem={({ item }) => <ItemCard item={item}/>}
     />
   );
 };
@@ -43,15 +43,22 @@ const SearchBar = () => (
   </View>
 );
 
+
+
 const ItemCard = ({ item }) => {
-  <View style={styles.itemCard}>
-    <Image source={{uri: item.image}} style={styles.itemImage} />
-    <View style={styles.itemInfo}>
-      <Text style={styles.itemTitle}>{item.name}</Text>
-      <Text style={styles.itemLocation}>{item.location}</Text>
-      <Text style={styles.itemDate}>{item.date}</Text>
+  const time = new Date(
+    item.seconds * 1000 + item.nanoseconds / 1000000,
+  );
+  return(
+    <View style={styles.itemCard}>
+      <Image source={{uri: item.image}} style={styles.itemImage} />
+      <View style={styles.itemInfo}>
+        <Text style={styles.itemTitle}>Name: {item.name}</Text>
+        <Text style={styles.itemLocation}>Location: {item.location}</Text>
+        <Text style={styles.itemDate}>Date: {time.toDateString()}</Text>
+      </View>
     </View>
-  </View>
+  );
 }
 
 // // You can style components and tags using StyleSheet
