@@ -12,7 +12,7 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName = 'Profile' screenOptions={{
+      <Stack.Navigator initialRouteName = 'Registration' screenOptions={{
         headerStyle: {
           backgroundColor: '#39275B',
         },
@@ -29,7 +29,7 @@ export default function App() {
         <Stack.Screen name='AuthStack' component={AuthStack} options={{gestureEnabled: false, headerShown: false}}/>
         <Stack.Screen name='Profile' component={Profile} options={{gestureEnabled: false}}/>
         <Stack.Screen name='Create Item' component={CreateItem} options={{gestureEnabled: false}}/>
-        <Stack.Screen name='Camera' component={CameraComponent} options={{ title: "Capture Photo" }}/>
+
         
         
       </Stack.Navigator>
