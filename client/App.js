@@ -30,7 +30,7 @@ export default function App() {
         <Stack.Screen name='AuthStack' component={AuthStack} options={{gestureEnabled: false, headerShown: false}}/>
         <Stack.Screen name='Profile' component={Profile} options={{gestureEnabled: false}}/>
         <Stack.Screen name='Create Item' component={CreateItem} options={{gestureEnabled: false}}/>
-        <Stack.Screen name='Camera' component={CameraComponent} options={{ title: "Capture Photo" }}/>
+        {/* <Stack.Screen name='Camera' component={CameraComponent} options={{ title: "Capture Photo" }}/> */}
         
         
       </Stack.Navigator>
