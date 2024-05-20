@@ -4,9 +4,11 @@ import { Text, TextInput, Image, View, FlatList, StyleSheet, ScrollView } from "
 import { styles } from '../assets/StyleSheet';
 import { collection, getDocs } from '@firebase/firestore';
 import { auth, firestore } from '../firebase/config';
+import { useNavigation } from '@react-navigation/native';
 
 // By using export, you can import and use this component in your app!
-export default LandingPage = ({navigation}) => {
+export default LandingPage = () => {
+  const navigation = useNavigation();
   const [items, setItems] = useState([]);
 
   const getData = async () => {

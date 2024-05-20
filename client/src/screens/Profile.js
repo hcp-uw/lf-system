@@ -75,20 +75,6 @@ export default function Profile() {
           </View>
         ))}
       </ScrollView>
-      <View style={styles.navBar}>
-        <TouchableOpacity onPress={() => handleNavigation('Profile')}>
-          <Text style={styles.textWhite}>Profile</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => handleNavigation('Explore')}>
-          <Text style={styles.textWhite}>Explore</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => handleNavigation('Messages')}>
-          <Text style={styles.textWhite}>Messages</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => handleNavigation('Items')}>
-          <Text style={styles.textWhite}>Items</Text>
-        </TouchableOpacity>
-      </View>
     </View>
   );
 }

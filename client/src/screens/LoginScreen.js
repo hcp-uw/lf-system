@@ -5,8 +5,10 @@ import { PurpleButton } from "../components/button";
 import { login } from "../auth/userAuth";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase/config";
+import { useNavigation } from "@react-navigation/native";
 
-export default function Login({ navigation }) {
+export default function Login() {
+  const navigation = useNavigation();
   const [netId, setNetId] = useState("");
   const [password, setPassword] = useState("");
   const testing = true; // set to true for easy login access
