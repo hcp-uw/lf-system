@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Text, TextInput, Image, View, FlatList, StyleSheet, ScrollView } from "react-native"; 
 import { styles } from '../assets/StyleSheet';
 import { collection, getDocs } from '@firebase/firestore';
-import { firestore } from '../firebase/config';
+import { auth, firestore } from '../firebase/config';
 
 // By using export, you can import and use this component in your app!
 export default LandingPage = ({navigation}) => {
@@ -19,7 +19,6 @@ export default LandingPage = ({navigation}) => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getData();
-      console.log(data);
       setItems(data);
     };
     fetchData();

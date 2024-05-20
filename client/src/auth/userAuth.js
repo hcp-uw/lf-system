@@ -1,7 +1,10 @@
 import { Alert } from "react-native";
 import { auth, firestore } from "../firebase/config";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import { addDoc, collection } from "@firebase/firestore";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { setDoc, doc } from "@firebase/firestore";
 
 const stripEmail = (netId) => {
   if (netId.includes("@")) {
@@ -12,28 +15,29 @@ const stripEmail = (netId) => {
   return netId;
 };
 
-const createProfile = async (user, name, campus, email) => {
+const createProfile = async (uid, name, campus, email) => {
   try {
-    const docRef = await addDoc(collection(firestore, "Users"), {
-      userId: user.uid,
+    const ref = doc(firestore, "Users", uid);
+    const docRef = await setDoc(ref, {
       name: name,
       campus: campus,
-      email: email
+      email: email,
+      avatar: null
     });
-    console.log("Document written with ID: ", docRef.id);
+    console.log("Document written with ID: ", docRef);
   } catch (e) {
     console.error("Error adding document: ", e);
   }
 };
 
-export async function register({ name, campus, netId, password, navigation }) {
+export async function register({ name, campus, netId, password }) {
   if (password !== "" && netId !== "" && name !== "") {
     const email = stripEmail(netId) + "@uw.edu";
 
     await createUserWithEmailAndPassword(auth, email, password)
       .then((userCredentials) => {
         const user = userCredentials.user;
-        createProfile(user, name, campus, email);
+        createProfile(user.uid, name, campus, email);
         console.log("User account created & signed in!");
       })
       .catch((error) => {
