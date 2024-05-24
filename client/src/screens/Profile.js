@@ -50,31 +50,36 @@ export default function Profile() {
   };
 
   return (
-    <View style={{
-      alignItems: "center",
-      flex: 1,}}>
-      <TouchableOpacity style={[styles.avatarPlaceHolder, {margin: 20}]} onPress={() => {}/*handleNavigation('Camera')*/}>
+    <View style={{ alignItems: 'center', flex: 1 }}>
+      <TouchableOpacity 
+        style={[styles.avatarPlaceHolder, { margin: 20 }]} 
+        onPress={() => { /* handleNavigation('Camera') */ }}
+      >
         {user.avatar !== null ? (
           <Image source={{ uri: user.avatar }} style={styles.avatar} />
         ) : (
-          <IonIcon name="person-circle-outline" size={100} color="#E1E2E6" />
+          <View>
+            <Ionicons name="person-circle-outline" size={100} color="#E1E2E6" />
+            <Ionicons name="camera-outline" size={30} color="#E1E2E6" style={{ position: 'absolute', bottom: 10, right: 10 }} />
+          </View>
         )}
       </TouchableOpacity>
       <View style={[styles.goldBigContainer, { height: '20%' }]}>
-      
-      <Text style={styles.alreadyUserText}>Name: {user.name}</Text>
-      <Text style={styles.alreadyUserText}>Campus: {user.campus}</Text>
+        <Text style={styles.alreadyUserText}>Name: {user.name}</Text>
+        <Text style={styles.alreadyUserText}>Campus: {user.campus}</Text>
       </View>
       <ScrollView
-      contentContainerStyle={[styles.itemsContainer, {backgroundColor: '#E1E2E6', alignItems: 'center'}]}
+        contentContainerStyle={[styles.itemsContainer, { backgroundColor: '#E1E2E6', alignItems: 'center' }]}
       >
-      <Text style={styles.headerText}>Posts</Text>
+        <Text style={styles.headerText}>Posts</Text>
+        <Ionicons name="pencil-outline" size={20} color="#000" />
         {user.items.map((item, index) => (
-          <View key={index} style={[styles.itemCard, {width: '85%'}]}>
+          <View key={index} style={[styles.itemCard, { width: '85%' }]}>
             <Text>{item}</Text>
           </View>
+          
         ))}
       </ScrollView>
     </View>
   );
-}
+};
