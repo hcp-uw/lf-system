@@ -11,7 +11,8 @@ import { styles } from "../assets/StyleSheet";
 
 // screen imports
 import LandingPage from "../screens/LandingPage";
-import Profile from "../screens/Profile";
+import Profile from "../screens/ProfileScreen";
+import CreateItem from "../screens/CreateItem";
 
 
 const Tab = createBottomTabNavigator();
@@ -95,7 +96,7 @@ export default function AuthStack() {
 
       <Tab.Screen
         name="CreatePost"
-        component={Profile}
+        component={CreateItem}
         options={{
           tabBarIcon: ({ focused }) => (
             <View

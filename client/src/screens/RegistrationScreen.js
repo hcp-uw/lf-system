@@ -8,8 +8,10 @@ import { auth } from "../firebase/config";
 
 
 import { register } from "../auth/userAuth";
+import { useNavigation } from "@react-navigation/native";
 
-export default function Registration({ navigation }) {
+export default function Registration({}) {
+  const navigation = useNavigation();
   const [netId, setNetId] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");

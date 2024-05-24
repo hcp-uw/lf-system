@@ -1,20 +1,22 @@
-import { Text, View, TouchableOpacity, TextInput } from "react-native";
-import { useEffect, useState } from "react";
-import { styles } from "../assets/StyleSheet";
-import { PurpleButton } from "../components/button";
-import { login } from "../auth/userAuth";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../firebase/config";
+import { Text, View, TouchableOpacity, TextInput } from 'react-native';
+import { useEffect, useState } from 'react';
+import { styles } from '../assets/StyleSheet';
+import { PurpleButton } from '../components/button';
+import { login } from '../auth/userAuth';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../firebase/config';
+import { useNavigation } from '@react-navigation/native';
 
-export default function Login({ navigation }) {
-  const [netId, setNetId] = useState("");
-  const [password, setPassword] = useState("");
+export default function Login() {
+  const navigation = useNavigation();
+  const [netId, setNetId] = useState('');
+  const [password, setPassword] = useState('');
   const testing = true; // set to true for easy login access
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        navigation.navigate("AuthStack");
+        navigation.navigate('AuthStack');
       }
     });
 
@@ -24,24 +26,24 @@ export default function Login({ navigation }) {
   return (
     <View
       style={{
-        justifyContent: "center",
+        justifyContent: 'center',
         flex: 1,
       }}
     >
       <View style={styles.goldBigContainer}>
         <TextInput
-          textAlign="center"
+          textAlign='center'
           style={styles.textInputBar}
-          placeholderTextColor="#999"
-          placeholder="UW NetID"
+          placeholderTextColor='#999'
+          placeholder='UW NetID'
           onChangeText={(val) => setNetId(val)}
         />
 
         <TextInput
-          textAlign="center"
+          textAlign='center'
           style={styles.textInputBar}
-          placeholderTextColor="#999"
-          placeholder="Password"
+          placeholderTextColor='#999'
+          placeholder='Password'
           onChangeText={(val) => setPassword(val)}
         />
 
@@ -64,8 +66,8 @@ export default function Login({ navigation }) {
 
         <PurpleButton
           navigation={navigation}
-          navigationPage="Registration"
-          buttonText="Register"
+          navigationPage='Registration'
+          buttonText='Register'
         />
       </View>
     </View>
