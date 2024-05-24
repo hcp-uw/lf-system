@@ -11,6 +11,7 @@
 //   const [loading, setLoading] = useState(false);
 //   const cameraRef = useRef(null);
 
+
 //   useEffect(() => {
 //     (async () => {
 //       const { status } = await Camera.requestCameraPermissionsAsync();
