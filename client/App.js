@@ -6,6 +6,7 @@ import Login from './src/screens/LoginScreen';
 import Profile from './src/screens/ProfileScreen';
 import CreateItem from './src/screens/CreateItem';
 import CameraComponent from './src/screens/CameraComponent';
+import Items from './src/screens/Items';
 
 
 const Stack = createNativeStackNavigator();
@@ -13,7 +14,7 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName = 'Registration' screenOptions={{
+      <Stack.Navigator initialRouteName = 'Items' screenOptions={{
         headerStyle: {
           backgroundColor: '#39275B',
         },
@@ -30,6 +31,7 @@ export default function App() {
         <Stack.Screen name='AuthStack' component={AuthStack} options={{gestureEnabled: false, headerShown: false}}/>
         <Stack.Screen name='Profile' component={Profile} options={{gestureEnabled: false}}/>
         <Stack.Screen name='Create Item' component={CreateItem} options={{gestureEnabled: false}}/>
+        <Stack.Screen name='Items' component={Items} options={{gestureEnabled: false}}/>
         
         
       </Stack.Navigator>

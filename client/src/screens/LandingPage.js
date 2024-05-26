@@ -5,7 +5,7 @@ import { styles } from '../assets/StyleSheet';
 import { collection, getDocs } from '@firebase/firestore';
 import { auth, firestore } from '../firebase/config';
 import { useNavigation } from '@react-navigation/native';
-import { useNavigation } from '@react-navigation/native';
+
 
 // By using export, you can import and use this component in your app!
 export default LandingPage = ({}) => {

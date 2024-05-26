@@ -2,18 +2,15 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { View, Text } from "react-native";
 
 // icons
-import FeatherIcon from "react-native-vector-icons/Feather";
 import MaterialCommunityIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import IonIcon from "react-native-vector-icons/Ionicons";
 
 // component/asset imports
-import { styles } from "../assets/StyleSheet";
 
 // screen imports
 import LandingPage from "../screens/LandingPage";
 import Profile from "../screens/ProfileScreen";
 import CreateItem from "../screens/CreateItem";
-
 
 const Tab = createBottomTabNavigator();
 

@@ -7,7 +7,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase/config";
 import { register } from "../auth/userAuth";
 import { useNavigation } from "@react-navigation/native";
-import { useNavigation } from "@react-navigation/native";
+
 
 export default function Registration() {
   const navigation = useNavigation();

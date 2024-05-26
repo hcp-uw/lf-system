@@ -6,71 +6,63 @@ export const white = '#FFFFFF';
 
 export const styles = StyleSheet.create({
     goldBigContainer: {
-        backgroundColor: gold, // gold
+        backgroundColor: gold,
         alignItems: 'center',
         height: '68%',
-        padding: 30, // not actual padding, placeholder
-        gap:30,
+        padding: 30,
+        gap: 30,
         marginHorizontal: 45,
         borderRadius: 30,
         justifyContent: 'center'
     },
     
-    purpleContainer: { // Register and Log in Button
-        backgroundColor: purple, // purple
+    purpleContainer: {
+        backgroundColor: purple,
         alignItems: 'center',
         justifyContent: 'center',
         height: 39,
         width: 155,
         padding: 5,
-        justifyContent: 'center',
         marginHorizontal: 114,
         borderRadius: 30,
     },
 
-    /* inputContainer */
     textInputBar: {
         backgroundColor: white,
-        borderColor: '#000000',
+        borderColor: purple,
         borderRadius: 50,
         borderWidth: 1,
-        borderColor: purple,
         width: '80%',
         height: '8%',
         padding: 10,
         fontSize: 12,
     },
-    /* inputContainer */
 
-    /* Navigation Bar*/
     navBar: {
-        top: '20%',
         flexDirection: 'row',
-        justifyContent: 'center',
-        gap: 50,
-        padding:'1%'
+        justifyContent: 'space-around',
+        padding: '1%',
+        borderTopWidth: 1,
+        borderColor: '#ddd',
+        height: 60,
+        alignItems: 'center',
     },
     navButton: {
-        width: 40,
-        height: 40,
+        alignItems: 'center',
     },
     navImgButton: {
         width: '100%',
         height: '100%',
     },
-    /* Navigation Bar*/
 
-    /*landingpage*/
     container: {
         flex: 1,
         backgroundColor: '#FFFFFF',
-        
     },
     appHeader: {
         paddingTop: 48,
         paddingBottom: 16,
         backgroundColor: '#F8F8F8',
-        //paddingVertical: 10,
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -95,8 +87,6 @@ export const styles = StyleSheet.create({
         borderColor: 'black',
         width: 310,
         borderWidth: 1,
-        
-
     },
     itemCard: {
         borderColor: 'black',
@@ -113,7 +103,7 @@ export const styles = StyleSheet.create({
     },
     itemImage: {
         width: '100%',
-        aspectRatio: 1, // Adjust as necessary to maintain aspect ratio
+        aspectRatio: 1,
         borderBottomWidth: 1,
         borderColor: '#DDDDDD',
     },
@@ -160,8 +150,6 @@ export const styles = StyleSheet.create({
         fontSize: 16,
         margin: 20,
         height: '100%',
-        
-        
     },
     postText:{
         alignSelf:'center',
@@ -178,16 +166,12 @@ export const styles = StyleSheet.create({
         backgroundColor: '#E1E2E6',
         justifyContent: 'center',
         alignItems: 'center',
-
-
     },
     avatar:{
         position: 'absolute',
         width: 100,
         height: 100,
         borderRadius: 50,
-        
-
     },
     
     textInputBarCreateItem: {
@@ -198,6 +182,47 @@ export const styles = StyleSheet.create({
         height: '20%',
         padding: 30,
         fontSize: 12,
-    }
+    },
+    scrollViewContent: {
+        padding: 20,
+    },
+    section: {
+        marginBottom: 20,
+    },
+    sectionHeader: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
+    sectionTitle: {
+        fontSize: 18,
+        fontWeight: 'bold',
+    },
+    sectionSubtitle: {
+        fontSize: 14,
+        marginVertical: 10,
+    },
+    callToAction: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    clickHereText: {
+        color: '#0000FF',
+        marginRight: 5,
+    },
+    clickableIcon: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    imagesContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        flexWrap: 'wrap',
+    },
+    image: {
+        width: 100,
+        height: 100,
+        margin: 5,
+        borderRadius: 10,
+    },
 });
-    
